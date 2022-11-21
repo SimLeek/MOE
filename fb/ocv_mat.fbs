@@ -1,0 +1,13 @@
+// thx: https://stackoverflow.com/a/53411116
+
+namespace cvfb;
+
+table OcvMat {
+    rows:int32;
+    cols:int32;
+    elt_type:int32;
+    elt_size:int32;
+    mat_data:[byte];
+}
+
+root_type OcvMat;

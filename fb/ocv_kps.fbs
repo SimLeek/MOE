@@ -1,0 +1,31 @@
+include "ocv_mat.fbs";
+
+namespace cvfb;
+
+struct Point2f {
+    x:float;
+    y:float;
+}
+
+struct OcvKp {
+    angle:float;
+    class_id:int;
+    octave:int;
+    pt:Point2f;
+    response:float;
+    size:float;
+}
+
+table OcvKps {
+    size:int32;
+    kps:[OcvKp];
+}
+
+table OcvKpsAndDescs {
+    kps:OcvKps;
+    descs:OcvMat;
+}
+
+// use ocv_mat for the keypoint descriptors. OpenCV::OutputArray has a getMatRef function.
+
+root_type OcvKpsAndDescs;

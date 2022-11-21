@@ -1,0 +1,8 @@
+
+
+enum ReadySignal : byte {
+    Read = 0,
+    Written = 1,
+    Reading = 2,
+    Writing = 3
+}
