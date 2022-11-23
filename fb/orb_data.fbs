@@ -1,0 +1,21 @@
+include "ocv_mat.fbs";
+include "ocv_kps.fbs";
+include "orb_settings.fbs";
+
+namespace cvfb;
+
+/*enum OrbTopic : byte {
+    Mat = 1,
+    KpAndDesc,
+    Settings
+}*/
+
+union OrbDataUnion { OcvMat, OcvKpsAndDescs, OrbSettings }
+
+// a message that ZMQ can filter by pub sub topic
+table OrbData {
+    //topic:OrbTopic = Mat;
+    data:OrbDataUnion;
+}
+
+root_type OrbData;

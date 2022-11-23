@@ -1,0 +1,20 @@
+namespace cvfb;
+
+enum SetOrGet : byte {
+    Set = 0,
+    Get,
+}
+
+table OrbSettings {
+    set_or_get:SetOrGet= Set;
+    edge_threshold:int = 0;
+    fast_threshold:int=0;
+    first_level:int=0;
+    max_features:int=0;
+    n_levels:int=0;
+    scale_factor:double=0;
+    score_type:int=0;
+    wta_k:int=0;
+}
+
+root_type OrbSettings;

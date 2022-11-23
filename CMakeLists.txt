@@ -5,7 +5,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set (CMAKE_CXX_STANDARD 17)
 add_compile_definitions(COMPILING_DLL=1)
 
-option(MOE_BUILD_TESTS "Build tests for MOE" OFF)
+option(MOE_BUILD_TESTS "Build tests for MOE" ON)
 
 
 find_package(OpenCV 4.4)

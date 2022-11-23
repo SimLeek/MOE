@@ -12,7 +12,8 @@ void testing_orb_loop(){
 
     zmq::socket_t subscriber (context, zmq::socket_type::sub);
     subscriber.connect("tcp://127.0.0.1:6969");
-    subscriber.set(zmq::sockopt::subscribe, "");
+    std::string topic = topic_for_mat();
+    subscriber.set(zmq::sockopt::subscribe, topic);
     zmq::socket_t publisher (context, zmq::socket_type::pub);
     publisher.bind("tcp://127.0.0.1:6970");
 

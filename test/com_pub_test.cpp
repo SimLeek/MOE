@@ -13,7 +13,7 @@ int testing_write_frames(std::variant<int, std::string> cam_id=0){
     publisher.bind("tcp://127.0.0.1:6969");
     zmq::socket_t subscriber (context, zmq::socket_type::sub);
     subscriber.connect("tcp://127.0.0.1:6970");
-    subscriber.set(zmq::sockopt::subscribe, "");
+    subscriber.set(zmq::sockopt::subscribe, topic_for_kp());
 
     MESSAGE("bound frame pubs and subs.");
 
